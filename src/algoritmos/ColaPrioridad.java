@@ -102,4 +102,5 @@ public class ColaPrioridad {
     public boolean estaVacia() {
         return tamanio == 0;
     }
+    
 }
