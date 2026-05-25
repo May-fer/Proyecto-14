@@ -17,7 +17,7 @@ public class Prim {
     }
 
     public List<Arista> ejecutar(int inicio){
-        int n = grafo.getNumNodos;
+        int n = grafo.getNumNodos();
         key = new double[n];
         parent = new int[n];
         inMST = new boolean[n];
@@ -60,7 +60,7 @@ public class Prim {
         List<Arista> mst = new ArrayList<>();
         for(int i = 0; i < n; i++) {
             if(parent[i] != -1) {
-                mst.add(new Arista(parent[i], i, key[i]));
+                mst.add(new Arista(i, key[i]));
             }
         }
         return mst;
