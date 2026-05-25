@@ -2,7 +2,6 @@ package algoritmos;
 
 import modelo.Arista;
 import modelo.GrafoPonderado;
-
 import java.util.ArrayList;
 import java.util.List;
 
