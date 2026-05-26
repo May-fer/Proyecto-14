@@ -76,7 +76,7 @@ public class Prim {
         return total;
     }
 
-    public int getNumNodos() {
+    public int getComparaciones() {
         return comparaciones;
     }
 
@@ -95,6 +95,6 @@ public class Prim {
 
         System.out.println("Costo Total: " + getCostoTotal());
 
-        System.out.println("Comparaciones: " + comparaciones);
+        System.out.println("Comparaciones: " + getComparaciones());
     }
 }
