@@ -36,16 +36,6 @@ public class UnionFind {
     }
 
     /**
-     * Encuentra el representante (raíz) del conjunto que contiene el nodo x.
-     *
-     * Aplica COMPRESIÓN DE CAMINOS: durante la búsqueda de la raíz,
-     * hace que todos los nodos intermedios apunten directamente a la raíz.
-     * Esto "aplana" el árbol y acelera consultas futuras.
-     *
-     * Ejemplo visual:
-     *   Antes de find(3):  3 → 2 → 1 → 0(raíz)
-     *   Después de find(3): 3 → 0, 2 → 0, 1 → 0
-     *
      * @param x el nodo a consultar (0 ≤ x < n)
      * @return la raíz del conjunto de x
      * @throws ArrayIndexOutOfBoundsException si x está fuera del rango [0, n)
@@ -60,16 +50,6 @@ public class UnionFind {
     }
 
     /**
-     * Une los conjuntos que contienen los nodos x e y.
-     *
-     * Aplica UNIÓN POR RANGO: el árbol de menor rango se cuelga bajo
-     * el de mayor rango. Si los rangos son iguales, uno se cuelga del otro
-     * y ese incrementa su rango en 1.
-     *
-     * Regla clave para Kruskal:
-     *   - Retorna TRUE  → x e y estaban en componentes distintas → arista válida → agregar al MST.
-     *   - Retorna FALSE → x e y ya estaban conectados → agregar la arista formaría un ciclo → DESCARTAR.
-     *
      * @param x primer nodo
      * @param y segundo nodo
      * @return true si se unieron exitosamente (no había ciclo), false si ya estaban en el mismo conjunto
@@ -132,17 +112,7 @@ public class UnionFind {
         return n;
     }
 
-    /**
-     * Imprime el estado interno completo: arrays parent[] y rank[].
-     * Útil para depurar y verificar que la estructura funciona correctamente.
-     *
-     * Ejemplo de salida:
-     *   ── Estado UnionFind (5 nodos) ──
-     *   Nodo  :   0   1   2   3   4
-     *   Padre :   0   0   0   0   0   ← todos apuntan a raíz 0
-     *   Rango :   2   0   0   0   0
-     *   Componentes activas: 1
-     */
+    
     public void mostrarEstado() {
         System.out.println("\n  ── Estado UnionFind (" + n + " nodos) ──");
         System.out.print("  Nodo  : ");
@@ -164,10 +134,6 @@ public class UnionFind {
         }
     }
 
-    /**
-     * Valida que el id de nodo esté dentro del rango [0, n).
-     * @param x nodo a validar
-     */
     private void validarNodo(int x) {
         if (x < 0 || x >= n) {
             throw new ArrayIndexOutOfBoundsException(
