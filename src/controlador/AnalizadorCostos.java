@@ -26,6 +26,7 @@ public class AnalizadorCostos {
         mostrarTablaComparativa("Kruskal", kruskal.getTiempoNs(), kruskal.getComparaciones(), kruskal.getCostoTotal());
 
     }
+    
     public void mostrarTablaComparativa(String algoritmo, long tiempo, int comparaciones, double costo) {
     System.out.printf("| %-10s | %-12d | %-15d | %-9.2f |%n",
             algoritmo, tiempo, comparaciones, costo);
